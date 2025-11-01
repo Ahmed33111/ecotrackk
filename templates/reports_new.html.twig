@@ -1,0 +1,388 @@
+{% extends 'base_new.html.twig' %}
+
+{% block title %}Signalements - EcoTrack{% endblock %}
+
+{% block extra_css %}
+.signalement-card {
+  background-color: var(--blanc);
+  border: 2px solid var(--vert-clair);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(46, 204, 113, 0.1);
+}
+
+.signalement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(46, 204, 113, 0.2);
+  border-color: var(--vert-principal);
+}
+
+.signalement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.signalement-title {
+  color: var(--gris-texte);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.signalement-meta {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.signalement-meta i {
+  color: var(--vert-principal);
+  margin-right: 5px;
+}
+
+.signalement-description {
+  color: var(--gris-texte);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.signalement-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.badge-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.stat-box {
+  background-color: var(--blanc);
+  border: 2px solid var(--vert-clair);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+  border-color: var(--vert-principal);
+}
+
+.stat-box i {
+  font-size: 48px;
+  color: var(--vert-principal);
+  margin-bottom: 15px;
+}
+
+.stat-box h3 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--vert-principal);
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: var(--gris-texte);
+  font-size: 16px;
+  margin: 0;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: 2px solid var(--vert-principal);
+  background-color: transparent;
+  color: var(--vert-principal);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--vert-principal);
+  color: var(--blanc);
+}
+{% endblock %}
+
+{% block body %}
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1><i class="fas fa-exclamation-triangle"></i> Signalements Environnementaux</h1>
+    <p>Contribuez à un environnement plus propre en signalant les zones polluées</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <!-- STATISTICS -->
+  <div class="stats-grid">
+    <div class="stat-box">
+      <i class="fas fa-flag"></i>
+      <h3>3</h3>
+      <p>Mes signalements</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-check-circle"></i>
+      <h3>2</h3>
+      <p>Résolus</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-clock"></i>
+      <h3>1</h3>
+      <p>En attente</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-users"></i>
+      <h3>127</h3>
+      <p>Total communauté</p>
+    </div>
+  </div>
+
+  <!-- ADD NEW BUTTON -->
+  <div class="text-center mb-5">
+    <a href="#" class="btn-eco btn-lg">
+      <i class="fas fa-plus me-2"></i>Nouveau signalement
+    </a>
+  </div>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filter-buttons">
+    <button class="filter-btn active">Tous</button>
+    <button class="filter-btn">Mes signalements</button>
+    <button class="filter-btn">En cours</button>
+    <button class="filter-btn">Résolus</button>
+    <button class="filter-btn">Urgents</button>
+  </div>
+
+  <!-- SIGNALEMENTS LIST -->
+  <div class="row">
+    <!-- Signalement 1 -->
+    <div class="col-lg-6">
+      <div class="signalement-card">
+        <div class="signalement-header">
+          <span class="badge-eco badge-eco-warning">En cours</span>
+          <small class="text-muted">Il y a 2 jours</small>
+        </div>
+        <h3 class="signalement-title">Décharge sauvage détectée</h3>
+        <div class="signalement-meta">
+          <i class="fas fa-map-marker-alt"></i>Route de Bizerte, km 15
+          <br>
+          <i class="fas fa-user"></i>Par Ranim
+        </div>
+        <p class="signalement-description">
+          Accumulation importante de déchets plastiques et électroniques abandonnés sur le bord de route. La situation nécessite une intervention rapide pour éviter la propagation de la pollution.
+        </p>
+        <div class="signalement-footer">
+          <div class="badge-group">
+            <span class="badge-eco badge-eco-danger">Urgent</span>
+            <span class="badge-eco badge-eco-info">Déchets</span>
+          </div>
+          <a href="#" class="btn-eco-outline btn-sm">
+            <i class="fas fa-eye me-1"></i>Détails
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signalement 2 -->
+    <div class="col-lg-6">
+      <div class="signalement-card">
+        <div class="signalement-header">
+          <span class="badge-eco badge-eco-success">Résolu</span>
+          <small class="text-muted">Il y a 1 semaine</small>
+        </div>
+        <h3 class="signalement-title">Conteneur endommagé</h3>
+        <div class="signalement-meta">
+          <i class="fas fa-map-marker-alt"></i>Rue Habib Thameur, Tunis
+          <br>
+          <i class="fas fa-user"></i>Par Ranim
+        </div>
+        <p class="signalement-description">
+          Conteneur de recyclage cassé nécessitant un remplacement urgent. Les habitants ne peuvent plus déposer leurs déchets recyclables correctement.
+        </p>
+        <div class="signalement-footer">
+          <div class="badge-group">
+            <span class="badge-eco badge-eco-info">Infrastructure</span>
+            <span class="badge-eco badge-eco-success">Résolu</span>
+          </div>
+          <a href="#" class="btn-eco-outline btn-sm">
+            <i class="fas fa-eye me-1"></i>Détails
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signalement 3 -->
+    <div class="col-lg-6">
+      <div class="signalement-card">
+        <div class="signalement-header">
+          <span class="badge-eco badge-eco-success">Résolu</span>
+          <small class="text-muted">Il y a 2 semaines</small>
+        </div>
+        <h3 class="signalement-title">Pollution de l'eau</h3>
+        <div class="signalement-meta">
+          <i class="fas fa-map-marker-alt"></i>Lac de Tunis, zone nord
+          <br>
+          <i class="fas fa-user"></i>Par Ranim
+        </div>
+        <p class="signalement-description">
+          Présence de nappes d'huile et déchets flottants dans le lac. La situation a été rapidement prise en charge par les autorités locales.
+        </p>
+        <div class="signalement-footer">
+          <div class="badge-group">
+            <span class="badge-eco badge-eco-info">Eau</span>
+            <span class="badge-eco badge-eco-success">Résolu</span>
+          </div>
+          <a href="#" class="btn-eco-outline btn-sm">
+            <i class="fas fa-eye me-1"></i>Détails
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signalement 4 - Communauté -->
+    <div class="col-lg-6">
+      <div class="signalement-card">
+        <div class="signalement-header">
+          <span class="badge-eco badge-eco-warning">En cours</span>
+          <small class="text-muted">Il y a 3 heures</small>
+        </div>
+        <h3 class="signalement-title">Émissions de fumée industrielle</h3>
+        <div class="signalement-meta">
+          <i class="fas fa-map-marker-alt"></i>Zone industrielle, Mégrine
+          <br>
+          <i class="fas fa-user"></i>Par Ahmed K.
+        </div>
+        <p class="signalement-description">
+          Fumée noire excessive provenant d'une usine locale. Les riverains se plaignent de gênes respiratoires et demandent une inspection urgente.
+        </p>
+        <div class="signalement-footer">
+          <div class="badge-group">
+            <span class="badge-eco badge-eco-danger">Urgent</span>
+            <span class="badge-eco badge-eco-info">Air</span>
+          </div>
+          <a href="#" class="btn-eco-outline btn-sm">
+            <i class="fas fa-eye me-1"></i>Détails
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signalement 5 -->
+    <div class="col-lg-6">
+      <div class="signalement-card">
+        <div class="signalement-header">
+          <span class="badge-eco badge-eco-warning">En cours</span>
+          <small class="text-muted">Il y a 1 jour</small>
+        </div>
+        <h3 class="signalement-title">Arbres à abattre</h3>
+        <div class="signalement-meta">
+          <i class="fas fa-map-marker-alt"></i>Avenue Mohammed V
+          <br>
+          <i class="fas fa-user"></i>Par Sarah M.
+        </div>
+        <p class="signalement-description">
+          Plusieurs arbres centenaires menacés d'abattage pour un projet immobilier. La mobilisation citoyenne tente de sauver ce patrimoine naturel.
+        </p>
+        <div class="signalement-footer">
+          <div class="badge-group">
+            <span class="badge-eco badge-eco-warning">Important</span>
+            <span class="badge-eco badge-eco-info">Nature</span>
+          </div>
+          <a href="#" class="btn-eco-outline btn-sm">
+            <i class="fas fa-eye me-1"></i>Détails
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signalement 6 -->
+    <div class="col-lg-6">
+      <div class="signalement-card">
+        <div class="signalement-header">
+          <span class="badge-eco badge-eco-danger">Nouveau</span>
+          <small class="text-muted">Il y a 30 min</small>
+        </div>
+        <h3 class="signalement-title">Braconnage signalé</h3>
+        <div class="signalement-meta">
+          <i class="fas fa-map-marker-alt"></i>Parc national Ichkeul
+          <br>
+          <i class="fas fa-user"></i>Par Karim B.
+        </div>
+        <p class="signalement-description">
+          Activité suspecte de braconnage d'oiseaux migrateurs observée dans la réserve naturelle. Les autorités du parc ont été alertées immédiatement.
+        </p>
+        <div class="signalement-footer">
+          <div class="badge-group">
+            <span class="badge-eco badge-eco-danger">Urgent</span>
+            <span class="badge-eco badge-eco-info">Faune</span>
+          </div>
+          <a href="#" class="btn-eco-outline btn-sm">
+            <i class="fas fa-eye me-1"></i>Détails
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="text-center mt-5 mb-5">
+    <nav>
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Précédent</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Suivant</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Filter functionality
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+{% endblock %}
+

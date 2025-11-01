@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <main class="main-content position-relative border-radius-lg">
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl">
+      <div class="container-fluid py-1 px-3">
+        <h6 class="font-weight-bolder mb-0">Événements Écologiques 📅</h6>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button class="btn-eco btn-sm">
+              <i class="fa-solid fa-plus me-2"></i>Créer un événement
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+      <div class="row">
+        <!-- Event Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <span class="badge bg-success">À venir</span>
+                <i class="fa-solid fa-calendar-day eco-icon"></i>
+              </div>
+              <h5 class="fw-bold">Nettoyage de plage</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-map-marker-alt me-1"></i>La Marsa, Tunis
+              </p>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-clock me-1"></i>15 Novembre 2025, 9h00
+              </p>
+              <p class="mb-3">Rejoignez-nous pour nettoyer la plage et protéger notre environnement marin.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-users me-1"></i>45 participants
+                </span>
+                <button class="btn-eco btn-sm">Participer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <span class="badge bg-success">À venir</span>
+                <i class="fa-solid fa-tree eco-icon"></i>
+              </div>
+              <h5 class="fw-bold">Plantation d'arbres</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-map-marker-alt me-1"></i>Parc El Belvedere
+              </p>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-clock me-1"></i>20 Novembre 2025, 8h30
+              </p>
+              <p class="mb-3">Aidez-nous à planter 500 arbres pour un environnement plus vert.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-users me-1"></i>32 participants
+                </span>
+                <button class="btn-eco btn-sm">Participer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <span class="badge bg-info">En cours</span>
+                <i class="fa-solid fa-chalkboard-teacher eco-icon"></i>
+              </div>
+              <h5 class="fw-bold">Atelier recyclage créatif</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-map-marker-alt me-1"></i>Centre culturel, Carthage
+              </p>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-clock me-1"></i>25 Novembre 2025, 14h00
+              </p>
+              <p class="mb-3">Apprenez à transformer vos déchets en objets utiles et décoratifs.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-users me-1"></i>18 participants
+                </span>
+                <button class="btn-eco btn-sm">Participer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <span class="badge bg-secondary">Terminé</span>
+                <i class="fa-solid fa-recycle eco-icon"></i>
+              </div>
+              <h5 class="fw-bold">Collecte de plastique</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-map-marker-alt me-1"></i>Lac de Tunis
+              </p>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-clock me-1"></i>5 Novembre 2025, 10h00
+              </p>
+              <p class="mb-3">Collecte de 2,5 tonnes de plastique récupérées ! Merci à tous.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-users me-1"></i>67 participants
+                </span>
+                <button class="btn btn-outline-secondary btn-sm" disabled>Terminé</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <span class="badge bg-success">À venir</span>
+                <i class="fa-solid fa-bicycle eco-icon"></i>
+              </div>
+              <h5 class="fw-bold">Vélo-tour écologique</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-map-marker-alt me-1"></i>Avenue Habib Bourguiba
+              </p>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-clock me-1"></i>1 Décembre 2025, 7h00
+              </p>
+              <p class="mb-3">Découverte de Tunis en vélo pour promouvoir la mobilité durable.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-users me-1"></i>55 participants
+                </span>
+                <button class="btn-eco btn-sm">Participer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <span class="badge bg-success">À venir</span>
+                <i class="fa-solid fa-lightbulb eco-icon"></i>
+              </div>
+              <h5 class="fw-bold">Conférence énergie verte</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-map-marker-alt me-1"></i>Hôtel Africa, Tunis
+              </p>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-clock me-1"></i>10 Décembre 2025, 16h00
+              </p>
+              <p class="mb-3">Conférence sur les énergies renouvelables et le futur durable.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-users me-1"></i>120 participants
+                </span>
+                <button class="btn-eco btn-sm">Participer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+

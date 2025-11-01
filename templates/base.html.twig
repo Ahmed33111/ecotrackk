@@ -109,8 +109,7 @@
       transform: rotate(20deg) scale(1.1);
     }
   </style>
-
-  {% block css%}
+{% endblock %}
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -125,11 +124,11 @@
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="#"><i class="fa-solid fa-user text-success"></i><span class="nav-link-text ms-2">Profil</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-calendar-days text-success"></i><span class="nav-link-text ms-2">Nos événements</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-dumpster text-success"></i><span class="nav-link-text ms-2">Dépôts de recyclage</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-triangle-exclamation text-success"></i><span class="nav-link-text ms-2">Signalements</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-blog text-success"></i><span class="nav-link-text ms-2">Blog</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('app_profile') }}"><i class="fa-solid fa-user text-success"></i><span class="nav-link-text ms-2">Profil</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('app_events') }}"><i class="fa-solid fa-calendar-days text-success"></i><span class="nav-link-text ms-2">Nos événements</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('app_deposits') }}"><i class="fa-solid fa-dumpster text-success"></i><span class="nav-link-text ms-2">Dépôts de recyclage</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('app_reports') }}"><i class="fa-solid fa-triangle-exclamation text-success"></i><span class="nav-link-text ms-2">Signalements</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('app_blog') }}"><i class="fa-solid fa-blog text-success"></i><span class="nav-link-text ms-2">Blog</span></a></li>
       </ul>
     </div>
   </aside>

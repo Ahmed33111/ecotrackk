@@ -1,0 +1,204 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <main class="main-content position-relative border-radius-lg">
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl">
+      <div class="container-fluid py-1 px-3">
+        <h6 class="font-weight-bolder mb-0">Blog Écologique 📝</h6>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button class="btn-eco btn-sm">
+              <i class="fa-solid fa-pen me-2"></i>Écrire un article
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+      <!-- Featured Article -->
+      <div class="card welcome-card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div style="height: 250px; background: linear-gradient(135deg, #27ae60, #2ecc71); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <i class="fa-solid fa-earth-americas fa-5x text-white"></i>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <span class="badge bg-success mb-2">Article vedette</span>
+              <h3 class="fw-bold mb-3">L'importance du recyclage pour notre planète</h3>
+              <p class="text-muted mb-3">
+                <i class="fa-solid fa-user me-2"></i>Par Ranim
+                <i class="fa-solid fa-calendar ms-3 me-2"></i>1 Novembre 2025
+                <i class="fa-solid fa-eye ms-3 me-2"></i>1,234 vues
+              </p>
+              <p class="mb-4">Le recyclage est l'un des gestes les plus importants que nous pouvons faire pour protéger notre environnement. Chaque année, des millions de tonnes de déchets sont produits dans le monde...</p>
+              <button class="btn-eco">
+                Lire la suite <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div class="row">
+        <!-- Post 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card h-100">
+            <div style="height: 200px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 10px 10px 0 0; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-water fa-4x text-white"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-info mb-2">Eau</span>
+              <h5 class="fw-bold mb-2">Comment économiser l'eau au quotidien</h5>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-calendar me-1"></i>28 Octobre 2025
+              </p>
+              <p class="mb-3">Des astuces simples et efficaces pour réduire votre consommation d'eau et préserver cette ressource précieuse.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-eye me-1"></i>856 vues
+                </span>
+                <a href="#" class="text-success fw-bold">Lire →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card h-100">
+            <div style="height: 200px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 10px 10px 0 0; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-fire fa-4x text-white"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-danger mb-2">Climat</span>
+              <h5 class="fw-bold mb-2">Le réchauffement climatique en Tunisie</h5>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-calendar me-1"></i>25 Octobre 2025
+              </p>
+              <p class="mb-3">Analyse des impacts du changement climatique sur notre région et les solutions possibles.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-eye me-1"></i>1,102 vues
+                </span>
+                <a href="#" class="text-success fw-bold">Lire →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card h-100">
+            <div style="height: 200px; background: linear-gradient(135deg, #f39c12, #e67e22); border-radius: 10px 10px 0 0; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-lightbulb fa-4x text-white"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-warning mb-2">Énergie</span>
+              <h5 class="fw-bold mb-2">Énergies renouvelables en Tunisie</h5>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-calendar me-1"></i>22 Octobre 2025
+              </p>
+              <p class="mb-3">État des lieux et perspectives du solaire et de l'éolien dans notre pays.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-eye me-1"></i>743 vues
+                </span>
+                <a href="#" class="text-success fw-bold">Lire →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card h-100">
+            <div style="height: 200px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 10px 10px 0 0; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-leaf fa-4x text-white"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Jardinage</span>
+              <h5 class="fw-bold mb-2">Créer un potager urbain bio</h5>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-calendar me-1"></i>20 Octobre 2025
+              </p>
+              <p class="mb-3">Guide complet pour démarrer votre potager sur balcon ou terrasse en ville.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-eye me-1"></i>1,567 vues
+                </span>
+                <a href="#" class="text-success fw-bold">Lire →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card h-100">
+            <div style="height: 200px; background: linear-gradient(135deg, #16a085, #1abc9c); border-radius: 10px 10px 0 0; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-recycle fa-4x text-white"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-success mb-2">DIY</span>
+              <h5 class="fw-bold mb-2">10 objets à fabriquer avec des déchets</h5>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-calendar me-1"></i>18 Octobre 2025
+              </p>
+              <p class="mb-3">Donnez une seconde vie à vos déchets en créant des objets utiles et décoratifs.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-eye me-1"></i>2,345 vues
+                </span>
+                <a href="#" class="text-success fw-bold">Lire →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card welcome-card h-100">
+            <div style="height: 200px; background: linear-gradient(135deg, #2c3e50, #34495e); border-radius: 10px 10px 0 0; display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-car fa-4x text-white"></i>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-dark mb-2">Mobilité</span>
+              <h5 class="fw-bold mb-2">Transport vert : alternatives à la voiture</h5>
+              <p class="text-muted small mb-3">
+                <i class="fa-solid fa-calendar me-1"></i>15 Octobre 2025
+              </p>
+              <p class="mb-3">Vélo, covoiturage, transports en commun : choisir la mobilité durable.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">
+                  <i class="fa-solid fa-eye me-1"></i>923 vues
+                </span>
+                <a href="#" class="text-success fw-bold">Lire →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="card welcome-card mt-4">
+        <div class="card-body">
+          <h5 class="fw-bold mb-3">Catégories populaires</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-success p-2">Recyclage (45)</span>
+            <span class="badge bg-info p-2">Eau (23)</span>
+            <span class="badge bg-danger p-2">Climat (18)</span>
+            <span class="badge bg-warning p-2">Énergie (32)</span>
+            <span class="badge bg-primary p-2">Nature (27)</span>
+            <span class="badge bg-secondary p-2">DIY (15)</span>
+            <span class="badge bg-dark p-2">Mobilité (12)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+

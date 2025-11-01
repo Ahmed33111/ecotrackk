@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="EcoTrack - Suivi et sensibilisation écologique">
+  <title>{% block title %}EcoTrack - Plateforme de Recyclage Écologique{% endblock %}</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --vert-principal: #2ecc71;
+      --vert-fonce: #27ae60;
+      --vert-clair: #e8f8f0;
+      --vert-tres-clair: #f0fdf4;
+      --blanc: #ffffff;
+      --gris-texte: #333333;
+      --gris-clair: #f5f5f5;
+      --gris-moyen: #e0e0e0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--vert-tres-clair);
+      color: var(--gris-texte);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* HEADER / NAVIGATION */
+    .main-header {
+      background-color: var(--blanc);
+      border-bottom: 3px solid var(--vert-principal);
+      box-shadow: 0 2px 15px rgba(46, 204, 113, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 15px 0;
+    }
+
+    .logo a {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--vert-principal);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .logo a em {
+      color: var(--vert-fonce);
+      font-style: normal;
+    }
+
+    .logo a:hover {
+      color: var(--vert-fonce);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .main-menu {
+      list-style: none;
+      display: flex;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-menu li a {
+      color: var(--gris-texte);
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .main-menu li a:hover,
+    .main-menu li.active a {
+      background-color: var(--vert-clair);
+      color: var(--vert-principal);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--vert-principal);
+      cursor: pointer;
+    }
+
+    /* MAIN CONTENT AREA */
+    .main-content {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--vert-principal), var(--vert-fonce));
+      color: var(--blanc);
+      padding: 60px 0;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-top: 15px;
+    }
+
+    /* CARDS */
+    .card-eco {
+      background-color: var(--blanc);
+      border: 2px solid var(--vert-clair);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(46, 204, 113, 0.1);
+      height: 100%;
+      margin-bottom: 30px;
+    }
+
+    .card-eco:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(46, 204, 113, 0.2);
+      border-color: var(--vert-principal);
+    }
+
+    /* BUTTONS */
+    .btn-eco {
+      background-color: var(--vert-principal);
+      color: var(--blanc);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      border: 2px solid var(--vert-principal);
+    }
+
+    .btn-eco:hover {
+      background-color: var(--vert-fonce);
+      color: var(--blanc);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+    }
+
+    .btn-eco-outline {
+      background-color: transparent;
+      color: var(--vert-principal);
+      border: 2px solid var(--vert-principal);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-eco-outline:hover {
+      background-color: var(--vert-principal);
+      color: var(--blanc);
+    }
+
+    /* BADGES */
+    .badge-eco {
+      background-color: var(--vert-principal);
+      color: var(--blanc);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .badge-eco-warning {
+      background-color: #f39c12;
+    }
+
+    .badge-eco-danger {
+      background-color: #e74c3c;
+    }
+
+    .badge-eco-success {
+      background-color: var(--vert-principal);
+    }
+
+    .badge-eco-info {
+      background-color: #3498db;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--vert-principal);
+      color: var(--blanc);
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer p {
+      color: var(--blanc);
+      margin: 0;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--blanc);
+        box-shadow: 0 5px 20px rgba(46, 204, 113, 0.2);
+        padding: 20px;
+      }
+
+      .main-nav.active {
+        display: block;
+      }
+
+      .main-menu {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .page-header h1 {
+        font-size: 32px;
+      }
+    }
+
+    {% block extra_css %}{% endblock %}
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <div class="logo">
+            <a href="{{ path('app_home') }}"><em>Eco</em>Track</a>
+          </div>
+        </div>
+        <div class="col-6 text-end">
+          <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <nav class="main-nav" id="mainNav">
+            <ul class="main-menu">
+              <li><a href="{{ path('app_home') }}">Home</a></li>
+              <li><a href="{{ path('app_profile') }}">À Propos</a></li>
+              <li><a href="{{ path('app_events') }}">Événements</a></li>
+              <li><a href="{{ path('app_deposits') }}">Dépôts</a></li>
+              <li><a href="{{ path('app_reports') }}">Signalements</a></li>
+              <li><a href="{{ path('app_blog') }}">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    {% block body %}{% endblock %}
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p><strong>EcoTrack</strong> - Ensemble pour un avenir plus vert 🌱</p>
+      <p>© 2025 Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+    }
+
+    function closeMenu() {
+      document.getElementById('mainNav').classList.remove('active');
+    }
+
+    // Active menu item
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.main-menu a').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  </script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
+
